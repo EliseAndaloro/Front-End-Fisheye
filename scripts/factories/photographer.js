@@ -13,20 +13,30 @@ function photographerFactory(data) {
         const tagline = document.createElement('p');
         const price = document.createElement('p');
         const link = document.createElement('a');
-        link.setAttribute("href", "www.google.com");
+        link.setAttribute("href", "http://localhost/Front-End-Fisheye/photographer.html?id="+id);
 
         paragraph.textContent= data.city + ', ' + data.country;
         tagline.textContent = data.tagline;
         price.textContent = data.price + '€/jour';
-        link.textContent = data.name;
+        h2.textContent = data.name;
 
-        h2.appendChild(link);    
-        article.appendChild(img);
-        article.appendChild(h2);
+        link.appendChild(img)
+        link.appendChild(h2);
+        article.appendChild(link);
         article.appendChild(paragraph);
         article.appendChild(tagline);
         article.appendChild(price);
         return (article);
     }
-    return { name, picture, getUserCardDOM }
+
+    function getPhotographerPageDom(){
+        const header = document.getElementById('header');
+        const h1 = document.createElement('h1');
+        h1.textContent = data.name;
+        header.appendChild(h1);
+        return (header);
+        }
+    }
+
+    return { name, picture, getUserCardDOM, getPhotographerPageDom }
 }
