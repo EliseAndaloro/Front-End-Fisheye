@@ -6,6 +6,41 @@
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.photograph-header #description h1 {
+    color: #D3573C;
+}
+
+.photograph-header #description #localisation {
+    color: #901C1C;
+    font-size: 1.5em;
+}
+
+.media_section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
+}
+
+.media_section img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+.media_section p {
+    color: #901C1C;
+    font-size: 1.5em;
+}
+
+.image_description {
+    display: flex;
+    gap: 50%;
 }
 
 .contact_button {

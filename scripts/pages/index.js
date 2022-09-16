@@ -1,4 +1,5 @@
 import PhotographersService from '../services/photographers.service.js';
+import photographerFactory from '../factories/photographer.js';
 
     async function displayData(photographers) {
         const photographersSection = document.querySelector(".photographer_section");
@@ -15,7 +16,7 @@ import PhotographersService from '../services/photographers.service.js';
         PhotographersService
             .fetchAllPhotographers()
             .then( photographers => displayData(photographers));
-            
+
     };
     
     init();
