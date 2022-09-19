@@ -35,7 +35,8 @@ function photographerFactory(data) {
     }
 
     function getPhotographerPageDom(){
-        const picture = `assets/photographers/${data[0].portrait}`;
+        const photographer = data[0];
+        const picture = `assets/photographers/${photographer.portrait}`;
         const header = document.getElementById('header');
         const description = document.getElementById('description');
         const h1 = document.createElement('h1');
@@ -43,10 +44,10 @@ function photographerFactory(data) {
 
         const localisation = document.createElement('p');
         localisation.setAttribute("id", "localisation")
-        localisation.textContent = data[0].city + " , " + data[0].country;
+        localisation.textContent = photographer.city + " , " + photographer.country;
         
         const tagline = document.createElement('p');
-        tagline.textContent = data[0].tagline;
+        tagline.textContent = photographer.tagline;
 
         text.appendChild(localisation);
         text.appendChild(tagline);
@@ -54,6 +55,9 @@ function photographerFactory(data) {
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
         img.setAttribute("class", "profile_photo");
+
+        const likesPrice = document.getElementById("likes_price");
+        likesPrice.textContent = photographer.likes + ' ' + photographer.price + '€/jour';
 
         h1.textContent = data[0].name;
         description.appendChild(h1);

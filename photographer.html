@@ -16,15 +16,24 @@
         <div id="description"></div>
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
     </div>
+    <div class="filter">
+        <label for="filter">Trier par </label>
+        <select name="filter" id="filter">
+            <option value="popularité">Popularité</option>
+            <option value="date">Date</option>
+            <option value="titre">Titre</option>
+        </select>
+    </div>
     <div class="media_section"></div>
+    <div id="likes_price"></div>
 </main>
 <div id="contact_modal" aria-hidden="true" role="dialog" aria-describedby="contactMe">
     <div class="modal">
         <header>
             <h2 id="contactMe">Contactez-moi</h2>
-            <img src="assets/icons/close.svg" onclick="closeModal()"/>
+            <img src="assets/icons/close.svg" id="closeModal" onclick="closeModal()"/>
         </header>
-        <form>
+        <form onsubmit="validate(event)">
             <div>
                 <label for="firstname">Prénom</label>
                 <input type="text" name="firstname" id="firstname"/>
@@ -39,14 +48,32 @@
             </div>
             <div>
                 <label>Votre Message</label>
-                <textarea> </textarea>
+                <textarea id="message"> </textarea>
             </div>
             <button class="contact_button" id="contact_button_submit">Envoyer</button>
         </form>
     </div>
 </div>
+
+<div id="lightBox" aria-hidden="true" role="dialog" aria-describedby="lightBox">
+    <div class="lightBox_content">
+        <header>
+            <img src="assets/icons/close.svg" onclick="closeModal()"/>
+        </header>
+        <div>
+            <span class="img prev-image">
+                <button onclick="goToPreviousSlide()">prev</button>
+            </span>
+            <span class="img next-image">
+                <button onclick="goToNextSlide()">next</button>
+            </span>
+            <ul id="carrousel"></ul>
+        </div>
+    </div>
+</div>
 <script src="./scripts/pages/photographer.js" type="module"></script>
 <script src="./scripts/factories/photographer.js"  type="module"></script>
 <script src="./scripts/utils/contactForm.js"></script>
+<script src="./scripts/utils/lightBox.js"></script>
 </body>
 </html>
