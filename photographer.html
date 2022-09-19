@@ -11,17 +11,17 @@
 <header>
     <img src="assets/images/logo.png" class="logo"/>
 </header>
-<main id="main">
+<main id="main" aria-hidden="false">
     <div class="photograph-header" id="header">
         <div id="description"></div>
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
     </div>
     <div class="media_section"></div>
 </main>
-<div id="contact_modal">
+<div id="contact_modal" aria-hidden="true" role="dialog" aria-describedby="contactMe">
     <div class="modal">
         <header>
-            <h2>Contactez-moi</h2>
+            <h2 id="contactMe">Contactez-moi</h2>
             <img src="assets/icons/close.svg" onclick="closeModal()"/>
         </header>
         <form>
