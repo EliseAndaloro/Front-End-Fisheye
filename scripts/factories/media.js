@@ -25,13 +25,9 @@ function mediaFactory (data) {
         const likes = document.createElement('p');
         likes.textContent = data.likes;
 
-        const heart = document.createElement('i');
-        heart.setAttribute("class", "fa-solid fa-heart");
-
         article.appendChild(img);
         imageDescription.appendChild(title);
         imageDescription.appendChild(likes);
-        imageDescription.appendChild(heart);
         article.appendChild(imageDescription);
 
         return (article);
@@ -43,20 +39,6 @@ function mediaFactory (data) {
         li.setAttribute("class", "item");
         li.setAttribute("id", "item-" + i);
 
-        /*const leftArrowSpan = document.createElement("span");
-        const leftArrow = document.createElement("img");
-        leftArrow.setAttribute("src", "assets/icons/left.svg");
-        leftArrowSpan.setAttribute("class", "img icon");
-        leftArrowSpan.setAttribute("id", "prev-image");
-        leftArrowSpan.appendChild(leftArrow);
-
-        const rightArrowSpan = document.createElement("span");
-        const rightArrow = document.createElement("img");
-        rightArrow.setAttribute("src", "assets/icons/right.svg");
-        rightArrowSpan.setAttribute("class", "img icon");
-        rightArrowSpan.setAttribute("id", "next-image");
-        rightArrowSpan.appendChild(rightArrow);*/
-
         const img = displayPhotoOrVideo(media);
         img.setAttribute("src", picture);
         img.setAttribute("class", "lightBox_img");
@@ -65,8 +47,6 @@ function mediaFactory (data) {
         title.textContent = data.title;
         li.appendChild(img);
         li.appendChild(title);
-        //carrousel.appendChild(li);
-        //carrousel.parentNode.insertBefore(leftArrowSpan, carrousel);
 
         return (li);
     }
