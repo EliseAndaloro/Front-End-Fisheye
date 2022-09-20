@@ -20,17 +20,18 @@ function loadMediaOfPhotographer() {
 
 function displayMedia(medias){
     const mediaSection = document.querySelector(".media_section");
-    const lightBox = document.getElementById("lightBox");
+    const lightBox = document.getElementById("carrousel");
     let i = 0;
 
-        medias.forEach((media) => {
-            const mediaModel = mediaFactory(media);
-            const mediaCardDOM = mediaModel.getMediaCardDOM();
-            const lightBoxDOM = mediaModel.putMediaInLightBox(i);
-            mediaSection.appendChild(mediaCardDOM);
-            lightBox.appendChild(lightBoxDOM);
-            i++;
-        });
+    medias.forEach((media) => {
+        const mediaModel = mediaFactory(media);
+        const mediaCardDOM = mediaModel.getMediaCardDOM(i);
+        const lightBoxDOM = mediaModel.putMediaInLightBox(i);
+        mediaSection.appendChild(mediaCardDOM);
+        lightBox.appendChild(lightBoxDOM);
+        i++;
+    });
+
 }
 loadPhotographer();
 loadMediaOfPhotographer();

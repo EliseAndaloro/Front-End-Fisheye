@@ -31,7 +31,7 @@
     <div class="modal">
         <header>
             <h2 id="contactMe">Contactez-moi</h2>
-            <img src="assets/icons/close.svg" id="closeModal" onclick="closeModal()"/>
+            <img src="assets/icons/close.svg" alt="Close dialog" id="closeModal" onclick="closeModal()"/>
         </header>
         <form onsubmit="validate(event)">
             <div>
@@ -57,17 +57,20 @@
 
 <div id="lightBox" aria-hidden="true" role="dialog" aria-describedby="lightBox">
     <div class="lightBox_content">
-        <header>
-            <img src="assets/icons/close.svg" onclick="closeModal()"/>
-        </header>
-        <div>
-            <span class="img prev-image">
-                <button onclick="goToPreviousSlide()">prev</button>
-            </span>
-            <span class="img next-image">
-                <button onclick="goToNextSlide()">next</button>
-            </span>
+        <!--<div class="carrousel_header">
+            <img src="assets/icons/closeLightBox.svg" onclick="closeLightBox()"/>
+        </div>-->
+        <div class="carrousel_content">
+            <div class="img icon" id="prev-image">
+                <img src="assets/icons/left.svg"/>
+            </div>
             <ul id="carrousel"></ul>
+            <div class="carrousel_right_side">
+                <img src="assets/icons/closeLightBox.svg" onclick="closeLightBox()"/>
+                <div class="img icon" id="next-image">
+                    <img src="assets/icons/right.svg"/>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -75,5 +78,6 @@
 <script src="./scripts/factories/photographer.js"  type="module"></script>
 <script src="./scripts/utils/contactForm.js"></script>
 <script src="./scripts/utils/lightBox.js"></script>
+<script src="https://use.fontawesome.com/cb4c84cb78.js"></script>
 </body>
 </html>

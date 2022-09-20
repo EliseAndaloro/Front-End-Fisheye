@@ -150,18 +150,61 @@ form textarea {
 
 #lightBox {
     display: none;
+    position: absolute;
+    left: 25%;
+    background-color: white;
+    width: 55%;
+    top: 0;
+}
+
+#lightBox .carrousel_right_side {
+    display: flex;
+    flex-direction: column;
+    gap: 45%;
+}
+
+#lightBox .carrousel_right_side img {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+#lightBox .carrousel_content {
+    display: flex;
+    justify-content: space-between;
+}
+
+#lightBox .carrousel_content .icon {
+    align-self: center;
+}
+
+#lightBox #carrousel {
+    display: flex;
 }
 
 #lightBox .item {
     list-style-type: none;
+    display: none;
 }
 
-#lightBox img {
-    width: 300px;
-    height: 300px;
+#lightBox .lightBox_img {
+    width: 760px;
+    max-height: 500px;
+    object-fit: cover;
 }
 
 #lightBox video {
-    width: 300px;
-    height: 300px;
+    width: 760px;
+    max-height: 760px;
+    object-fit: cover;
+}
+
+#lightBox p {
+    color: #901C1C;
+    margin : 0;
+}
+
+#lightBox .icon img{
+    width: 20px;
+    height: 20px;
 }

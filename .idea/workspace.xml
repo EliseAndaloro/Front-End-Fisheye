@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94a0f8cc-3db2-4b75-8baa-e0be355317fa" name="Changes" comment="service">
+    <list default="true" id="94a0f8cc-3db2-4b75-8baa-e0be355317fa" name="Changes" comment="creation lightbox.js + liste images">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/photographer.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/photographer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photographer.html" beforeDir="false" afterPath="$PROJECT_DIR$/photographer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/factories/photographer.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/factories/photographer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/factories/media.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/factories/media.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/pages/photographer.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/pages/photographer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/services/photographers.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/services/photographers.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/utils/lightBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/utils/lightBox.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,14 +28,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/scripts/factories/media.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/data/photographers.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/scripts/services/photographers.service.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/scripts/pages/index.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/index.html" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/css/photographer.css" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/scripts/factories/photographer.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/css/style.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/pages/index.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/services/photographers.service.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/photographer.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/pages/photographer.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/utils/contactForm.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/factories/photographer.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/css/photographer.css" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -48,8 +52,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Front-End-Fisheye2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/icons" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\Front-End-Fisheye\assets\icons" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -61,6 +70,7 @@
       <updated>1663147819691</updated>
       <workItem from="1663147821010" duration="4805000" />
       <workItem from="1663161371935" duration="3716000" />
+      <workItem from="1663657602400" duration="13763000" />
     </task>
     <task id="LOCAL-00001" summary="service">
       <created>1663157184398</created>
@@ -69,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663157184398</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="creation lightbox.js + liste images">
+      <created>1663601498297</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663601498297</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,6 +105,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="service" />
-    <option name="LAST_COMMIT_MESSAGE" value="service" />
+    <MESSAGE value="creation lightbox.js + liste images" />
+    <option name="LAST_COMMIT_MESSAGE" value="creation lightbox.js + liste images" />
   </component>
 </project>
