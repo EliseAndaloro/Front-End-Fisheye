@@ -56,8 +56,8 @@ function photographerFactory(data) {
         img.setAttribute("src", picture);
         img.setAttribute("class", "profile_photo");
 
-        const likesPrice = document.getElementById("likes_price");
-        likesPrice.textContent = photographer.likes + ' ' + photographer.price + '€/jour';
+        const likesPrice = document.getElementById("price");
+        likesPrice.textContent = photographer.price + '€/jour';
 
         h1.textContent = data[0].name;
         description.appendChild(h1);

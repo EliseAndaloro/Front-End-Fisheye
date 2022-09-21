@@ -8,6 +8,11 @@ let carouselInterval;
 
 function openLightBox(i) {
     lightBox.style.display = "block";
+    let items = document.querySelectorAll('.item');
+    
+    items.forEach(item => {
+        item.style.display = "none";
+    });
     document.getElementById('item-' + i).style.display = "block";
 
     document.getElementById('prev-image').addEventListener("click", function(){

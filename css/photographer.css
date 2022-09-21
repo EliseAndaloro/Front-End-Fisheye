@@ -51,6 +51,10 @@
     justify-content: space-between;
 }
 
+.image_description p {
+    margin-top: 0;
+}
+
 .contact_button {
     font-size: 20px;
     font-weight: bold;
@@ -88,6 +92,18 @@
     background-color: #D3573C;
     padding: 1%;
     border-radius: 5px;
+    display: flex;
+}
+
+#total_likes {
+    display: flex;
+    margin-right: 3em;
+}
+
+.heart_icon {
+    width: 20px !important;
+    height: 20px !important;
+    margin-left: 0.5em;
 }
 
 .modal {

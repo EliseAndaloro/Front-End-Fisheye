@@ -22,10 +22,28 @@ function mediaFactory (data) {
         const title = document.createElement('p');
         title.textContent = data.title;
 
+        const like = document.createElement('img');
+        like.setAttribute("src", "assets/icons/heart.svg");
+        like.setAttribute("class", "heart_icon");
+
         const likes = document.createElement('p');
+        likes.setAttribute("id", "likes_photo_"+i);
         likes.textContent = data.likes;
+        likes.addEventListener("click", function (){
+            likes.textContent = Number(likes.textContent) + Number(1);
+            likes.appendChild(like);
+            const black_heart = document.createElement('img');
+            black_heart.setAttribute("src", "assets/icons/black_heart.svg");
+            black_heart.setAttribute("class", "heart_icon");
+            const likesPrice = document.getElementById("total_likes");
+            let total_likes = document.getElementById("total_likes");
+            total_likes.textContent = Number(total_likes.textContent) + Number(1);
+            likesPrice.appendChild(black_heart);
+
+        }, { once: true });
 
         article.appendChild(img);
+        likes.appendChild(like);
         imageDescription.appendChild(title);
         imageDescription.appendChild(likes);
         article.appendChild(imageDescription);
@@ -58,6 +76,10 @@ function mediaFactory (data) {
         } else {
             return document.createElement("video");
         }
+    }
+
+    function addLike(){
+
     }
 
     return { getMediaCardDOM, putMediaInLightBox }
