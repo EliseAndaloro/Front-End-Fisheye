@@ -2,6 +2,9 @@ import PhotographersService from '../services/photographers.service.js';
 import photographerFactory from '../factories/photographer.js';
 import mediaFactory from '../factories/media.js';
 //Mettre le code JavaScript lié à la page photographer.html
+const sortBy = document.getElementById("filter");
+console.log(sortBy);
+
 function loadPhotographer() {
     let params = (new URL(document.location)).searchParams;
     let id = params.get('id');
@@ -33,6 +36,10 @@ function displayMedia(medias){
         totalLikes += media.likes;
         i++;
     });
+    displayTotalLikes(totalLikes);
+}
+
+function displayTotalLikes(totalLikes) {
     const likesPrice = document.getElementById("total_likes");
     const totalLikesSpan = document.createElement("span");
     const like = document.createElement('img');
@@ -41,7 +48,37 @@ function displayMedia(medias){
     totalLikesSpan.textContent = totalLikes;
     likesPrice.appendChild(totalLikesSpan);
     likesPrice.appendChild(like);
-
 }
+
+function displaySortMedia(medias){
+    const mediaSection = document.querySelector(".media_section");
+    mediaSection.innerHTML ="";
+    const lightBox = document.getElementById("carrousel");
+    let i = 0;
+    let totalLikes = 0;
+
+    medias.forEach((media) => {
+        const mediaModel = mediaFactory(media);
+        const mediaCardDOM = mediaModel.getMediaCardDOM(i);
+        const lightBoxDOM = mediaModel.putMediaInLightBox(i);
+        mediaSection.appendChild(mediaCardDOM);
+        lightBox.appendChild(lightBoxDOM);
+        totalLikes += media.likes;
+        i++;
+    });
+    const likesPrice = document.getElementById("total_likes");
+    likesPrice.innerHTML ="";
+    displayTotalLikes(totalLikes);
+}
+
+sortBy.addEventListener('change', function (){
+    console.log(sortBy.value);
+    let params = (new URL(document.location)).searchParams;
+    let id = params.get('id');
+    let medias = PhotographersService
+        .fetchPhotographerMediaSortBy(id, sortBy.value)
+        .then(medias => displaySortMedia(medias) );
+    
+});
 loadPhotographer();
 loadMediaOfPhotographer();

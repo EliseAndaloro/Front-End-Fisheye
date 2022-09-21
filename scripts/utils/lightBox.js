@@ -8,11 +8,7 @@ let carouselInterval;
 
 function openLightBox(i) {
     lightBox.style.display = "block";
-    let items = document.querySelectorAll('.item');
-    
-    items.forEach(item => {
-        item.style.display = "none";
-    });
+    hideAllItems();
     document.getElementById('item-' + i).style.display = "block";
 
     document.getElementById('prev-image').addEventListener("click", function(){
@@ -23,9 +19,23 @@ function openLightBox(i) {
         goToNextSlide(i)
         i++;
     });
+
+    document.addEventListener("keydown", e => {
+        const keyCode = e.keyCode ? e.keyCode : e.which;
+        if (keyCode === 27){
+            closeLightBox();
+        } else if ( keyCode === 39) {
+            goToNextSlide(i)
+            i++;
+        } else if (keyCode === 37){
+            goToPreviousSlide(i)
+            i--;
+        }
+    });
 }
 
 function goToPreviousSlide(currentItemPosition) {
+    hideAllItems();
     const lastItem = document.getElementById('item-' + currentItemPosition);
     currentItemPosition = currentItemPosition - 1;
     const currentItem = document.getElementById('item-'+ currentItemPosition );
@@ -33,6 +43,7 @@ function goToPreviousSlide(currentItemPosition) {
 }
 
 function goToNextSlide(currentItemPosition) {
+    hideAllItems();
     const lastItem = document.getElementById('item-' + currentItemPosition);
     currentItemPosition = currentItemPosition + 1;
     const currentItem = document.getElementById('item-'+ currentItemPosition );
@@ -54,5 +65,13 @@ function closeLightBox(){
     lightBox.setAttribute("aria-hidden", "true");
     lightBox.style.display = "none";
 }
+
+function hideAllItems(){
+    let items = document.querySelectorAll('.item');
+    items.forEach(item => {
+        item.style.display = "none";
+    });
+}
+
 
 

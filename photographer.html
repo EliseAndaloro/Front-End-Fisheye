@@ -9,19 +9,19 @@
 </head>
 <body>
 <header>
-    <img src="assets/images/logo.png" class="logo"/>
+    <a href="index.html"><img src="assets/images/logo.png" class="logo" alt="Fisheye Home page"/></a>
 </header>
 <main id="main" aria-hidden="false">
     <div class="photograph-header" id="header">
         <div id="description"></div>
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button class="contact_button" onclick="displayModal()" aria-label="Contact Me">Contactez-moi</button>
     </div>
     <div class="filter">
         <label for="filter">Trier par </label>
-        <select name="filter" id="filter">
-            <option value="popularité">Popularité</option>
+        <select name="filter" id="filter" aria-labelledby="Order By">
+            <option value="likes">Popularité</option>
             <option value="date">Date</option>
-            <option value="titre">Titre</option>
+            <option value="title">Titre</option>
         </select>
     </div>
     <div class="media_section"></div>
@@ -36,7 +36,7 @@
     <div class="modal">
         <header>
             <h2 id="contactMe">Contactez-moi</h2>
-            <img src="assets/icons/close.svg" alt="Close dialog" id="closeModal" onclick="closeModal()"/>
+            <img src="assets/icons/close.svg" alt="Close Contact Form" id="closeModal" onclick="closeModal()"/>
         </header>
         <form onsubmit="validate(event)">
             <div>
@@ -55,21 +55,21 @@
                 <label>Votre Message</label>
                 <textarea id="message"> </textarea>
             </div>
-            <button class="contact_button" id="contact_button_submit">Envoyer</button>
+            <button class="contact_button" id="contact_button_submit" aria-label="Send">Envoyer</button>
         </form>
     </div>
 </div>
 
-<div id="lightBox" aria-hidden="true" role="dialog" aria-describedby="lightBox">
+<div id="lightBox" aria-hidden="true" role="dialog" aria-label="image closeup view">
     <div class="carrousel_content">
         <div class="img icon" id="prev-image">
-            <img src="assets/icons/left.svg"/>
+            <img src="assets/icons/left.svg" alt="Previous image"/>
         </div>
         <ul id="carrousel"></ul>
         <div class="carrousel_right_side">
-            <img src="assets/icons/closeLightBox.svg" onclick="closeLightBox()"/>
+            <img src="assets/icons/closeLightBox.svg" onclick="closeLightBox()" alt="Close dialog"/>
             <div class="img icon" id="next-image">
-                <img src="assets/icons/right.svg"/>
+                <img src="assets/icons/right.svg" alt="Next image"/>
             </div>
         </div>
     </div>

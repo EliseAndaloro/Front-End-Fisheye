@@ -13,9 +13,10 @@ function mediaFactory (data) {
 
     function getMediaCardDOM(i) {
         const article = document.createElement('article');
-        article.setAttribute("onclick", 'openLightBox('+i+');');
         const img = displayPhotoOrVideo(media);
         img.setAttribute("src", picture);
+        img.setAttribute("onclick", 'openLightBox('+i+');');
+        img.setAttribute("alt", data.title+', closeup view');
 
         const imageDescription = document.createElement('div');
         imageDescription.setAttribute("class", "image_description");
@@ -28,6 +29,7 @@ function mediaFactory (data) {
 
         const likes = document.createElement('p');
         likes.setAttribute("id", "likes_photo_"+i);
+        likes.setAttribute("aria-label", "likes");
         likes.textContent = data.likes;
         likes.addEventListener("click", function (){
             likes.textContent = Number(likes.textContent) + Number(1);
@@ -52,7 +54,6 @@ function mediaFactory (data) {
     }
 
     function putMediaInLightBox(i) {
-        //const carrousel = document.getElementById("carrousel");
         const li = document.createElement("li");
         li.setAttribute("class", "item");
         li.setAttribute("id", "item-" + i);
@@ -60,6 +61,7 @@ function mediaFactory (data) {
         const img = displayPhotoOrVideo(media);
         img.setAttribute("src", picture);
         img.setAttribute("class", "lightBox_img");
+        img.setAttribute("alt", data.title);
 
         const title = document.createElement('p');
         title.textContent = data.title;

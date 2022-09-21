@@ -3,8 +3,8 @@ function displayModal() {
     const modal = document.getElementById("contact_modal");
     const main = document.getElementById("main");
     const closeModalImg = document.getElementById('closeModal');
-    main.setAttribute("aria-hidden", "true");
-    modal.setAttribute("aria-hidden", "false");
+    main.setAttribute("aria-hidden", true);
+    modal.setAttribute("aria-hidden", false);
 	modal.style.display = "block";
     /*document.addEventListener("keydown", e => {
         const keyCode = e.keyCode ? e.keyCode : e.which;
@@ -33,3 +33,10 @@ function validate(e) {
     console.log(values);
     closeModal();
 }
+
+document.addEventListener("keydown", e => {
+        const keyCode = e.keyCode ? e.keyCode : e.which;
+        if (keyCode === 27){
+            closeModal();
+        }
+});

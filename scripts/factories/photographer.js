@@ -8,6 +8,7 @@ function photographerFactory(data) {
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
         img.setAttribute("class", "profile_photo");
+        img.setAttribute("alt", data.name)
 
         const h2 = document.createElement( 'h2' );
         const description = document.createElement('div');
@@ -41,6 +42,8 @@ function photographerFactory(data) {
         const description = document.getElementById('description');
         const h1 = document.createElement('h1');
         const text = document.createElement('div');
+        const contactMe = document.getElementById("contactMe");
+        contactMe.textContent = "Contactez-moi "+photographer.name;
 
         const localisation = document.createElement('p');
         localisation.setAttribute("id", "localisation")
@@ -55,11 +58,12 @@ function photographerFactory(data) {
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
         img.setAttribute("class", "profile_photo");
+        img.setAttribute("alt", photographer.name)
 
         const likesPrice = document.getElementById("price");
         likesPrice.textContent = photographer.price + '€/jour';
 
-        h1.textContent = data[0].name;
+        h1.textContent = photographer.name;
         description.appendChild(h1);
         description.appendChild(text);
         header.appendChild(img);
