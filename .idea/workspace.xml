@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94a0f8cc-3db2-4b75-8baa-e0be355317fa" name="Changes" comment="likes + carrousel">
+    <list default="true" id="94a0f8cc-3db2-4b75-8baa-e0be355317fa" name="Changes" comment="contact modal + accessibilité clavier">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/photographer.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/photographer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photographer.html" beforeDir="false" afterPath="$PROJECT_DIR$/photographer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/factories/media.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/factories/media.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/factories/photographer.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/factories/photographer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/pages/photographer.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/pages/photographer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/services/photographers.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/services/photographers.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/utils/contactForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/utils/contactForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/utils/lightBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/utils/lightBox.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +67,7 @@
       <workItem from="1663147821010" duration="4805000" />
       <workItem from="1663161371935" duration="3716000" />
       <workItem from="1663657602400" duration="15576000" />
-      <workItem from="1663743759660" duration="14686000" />
+      <workItem from="1663743759660" duration="15385000" />
     </task>
     <task id="LOCAL-00001" summary="service">
       <created>1663157184398</created>
@@ -112,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663749870563</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="contact modal + accessibilité clavier">
+      <created>1663765092491</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1663765092491</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +134,7 @@
     <MESSAGE value="carrousel" />
     <MESSAGE value="css lightbox" />
     <MESSAGE value="likes + carrousel" />
-    <option name="LAST_COMMIT_MESSAGE" value="likes + carrousel" />
+    <MESSAGE value="contact modal + accessibilité clavier" />
+    <option name="LAST_COMMIT_MESSAGE" value="contact modal + accessibilité clavier" />
   </component>
 </project>
