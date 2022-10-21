@@ -1,3 +1,6 @@
+a {
+    text-decoration: none;
+}
 #contact_modal {
     display: none;
     background-color: rgba(0,0,0,0.2);
@@ -77,13 +80,7 @@
 .filter {
     font-weight: bold;
     margin: 20px 100px;
-}
-
-.filter select {
-    background-color: #901C1C;
-    color: white;
-    padding: 1%;
-    border-radius: 5px;
+    display: flex;
 }
 
 .filter label{

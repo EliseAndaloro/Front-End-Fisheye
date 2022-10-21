@@ -18,7 +18,7 @@ function photographerFactory(data) {
         const price = document.createElement('p');
         price.setAttribute("class", "price");
         const link = document.createElement('a');
-        link.setAttribute("href", "http://localhost/Front-End-Fisheye/photographer.html?id="+id);
+        link.setAttribute("href", "photographer.html?id="+id);
 
         paragraph.textContent= data.city + ', ' + data.country;
         tagline.textContent = data.tagline;

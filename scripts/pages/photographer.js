@@ -1,14 +1,13 @@
 import PhotographersService from '../services/photographers.service.js';
 import photographerFactory from '../factories/photographer.js';
 import mediaFactory from '../factories/media.js';
-//Mettre le code JavaScript lié à la page photographer.html
-const sortBy = document.getElementById("filter");
-console.log(sortBy);
+
+const sortBy = document.getElementById("select-custom");
 
 function loadPhotographer() {
     let params = (new URL(document.location)).searchParams;
     let id = params.get('id');
-    let photographer = PhotographersService
+    PhotographersService
         .fetchPhotographer(id)
         .then( photographer => photographerFactory(photographer).getPhotographerPageDom());
 }
@@ -16,7 +15,7 @@ function loadPhotographer() {
 function loadMediaOfPhotographer() {
     let params = (new URL(document.location)).searchParams;
     let id = params.get('id');
-    let medias = PhotographersService
+    PhotographersService
     .fetchPhotographerMedia(id)
     .then(medias => displayMedia(medias) );
 }
@@ -71,14 +70,14 @@ function displaySortMedia(medias){
     displayTotalLikes(totalLikes);
 }
 
-sortBy.addEventListener('change', function (){
-    console.log(sortBy.value);
+sortBy.addEventListener("click", function (){
     let params = (new URL(document.location)).searchParams;
     let id = params.get('id');
-    let medias = PhotographersService
-        .fetchPhotographerMediaSortBy(id, sortBy.value)
+    let sortBySelected = document.getElementsByClassName('same-as-selected')[0];
+    PhotographersService
+        .fetchPhotographerMediaSortBy(id, sortBySelected.textContent)
         .then(medias => displaySortMedia(medias) );
-    
 });
+
 loadPhotographer();
 loadMediaOfPhotographer();

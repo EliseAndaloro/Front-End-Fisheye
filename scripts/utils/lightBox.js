@@ -1,53 +1,88 @@
 const lightBox = document.getElementById("lightBox");
 const prevBtn = document.getElementById('prev-image');
 const nextBtn = document.getElementById('next-image');
-const carouselItems = document.getElementsByClassName('item');
-
-
-let carouselInterval;
 
 function openLightBox(i) {
+    const main = document.getElementById("main");
+    main.removeAttribute('aria-hidden');
+    main.setAttribute("aria-hidden", "true");
+    lightBox.setAttribute("aria-hidden", "false");
     lightBox.style.display = "block";
+    
     hideAllItems();
     document.getElementById('item-' + i).style.display = "block";
+    var maxItem = document.getElementsByClassName('item');
 
-    document.getElementById('prev-image').addEventListener("click", function(){
-        goToPreviousSlide(i)
-        i--;
+    prevBtn.addEventListener("click", function(){
+        if(i === 0) {
+            i = maxItem.length;
+        }
+        i = goToPreviousSlide(i);
     });
-    document.getElementById('next-image').addEventListener("click", function(){
-        goToNextSlide(i)
-        i++;
+    nextBtn.addEventListener("click", function(){
+        if (i === maxItem.length - 1 ){
+            i = -1;
+        }
+        
+        i = goToNextSlide(i);
     });
 
     document.addEventListener("keydown", e => {
         const keyCode = e.keyCode ? e.keyCode : e.which;
         if (keyCode === 27){
             closeLightBox();
+
         } else if ( keyCode === 39) {
-            goToNextSlide(i)
-            i++;
+            if (i === maxItem.length - 1 ){
+                i = -1;
+            }
+            i = goToNextSlide(i);
+
         } else if (keyCode === 37){
-            goToPreviousSlide(i)
-            i--;
+            if(i === 0) {
+                i = maxItem.length;
+            }
+            i = goToPreviousSlide(i);
         }
     });
 }
 
 function goToPreviousSlide(currentItemPosition) {
+    var maxItem = document.getElementsByClassName('item');
     hideAllItems();
-    const lastItem = document.getElementById('item-' + currentItemPosition);
-    currentItemPosition = currentItemPosition - 1;
-    const currentItem = document.getElementById('item-'+ currentItemPosition );
+    var lastItem = document.getElementById('item-' + currentItemPosition);
+
+    if(currentItemPosition === maxItem.length){
+        currentItemPosition = maxItem.length - 1 ;
+        lastItem = document.getElementById('item-' + 0);
+        var currentItem = document.getElementById('item-'+ currentItemPosition );
+    }
+    else if (currentItemPosition === 0){
+        currentItemPosition = maxItem.length - 1 ;
+    }
+     else {
+        currentItemPosition = currentItemPosition - 1;
+        var currentItem = document.getElementById('item-'+ currentItemPosition );
+    }
     setNodeAttributes(lastItem, currentItem);
+    return currentItemPosition;
 }
 
 function goToNextSlide(currentItemPosition) {
     hideAllItems();
-    const lastItem = document.getElementById('item-' + currentItemPosition);
-    currentItemPosition = currentItemPosition + 1;
-    const currentItem = document.getElementById('item-'+ currentItemPosition );
+    var maxItem = document.getElementsByClassName('item').length;
+    var lastItem = document.getElementById('item-' + currentItemPosition);
+    if (currentItemPosition < 0 ){
+        currentItemPosition = maxItem - 1;
+        lastItem = document.getElementById('item-' + currentItemPosition);
+        currentItemPosition = 0;
+        var currentItem = document.getElementById('item-'+ currentItemPosition);
+    } else{
+        currentItemPosition = currentItemPosition + 1;
+        var currentItem = document.getElementById('item-'+ currentItemPosition );
+    }
     setNodeAttributes(lastItem, currentItem);
+    return currentItemPosition;
 }
 
 

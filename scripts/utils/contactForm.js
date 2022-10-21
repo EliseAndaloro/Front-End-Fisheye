@@ -1,18 +1,10 @@
-const contactForm = document.getElementsByTagName("form");
 function displayModal() {
     const modal = document.getElementById("contact_modal");
     const main = document.getElementById("main");
-    const closeModalImg = document.getElementById('closeModal');
     main.setAttribute("aria-hidden", true);
     modal.setAttribute("aria-hidden", false);
 	modal.style.display = "block";
-    /*document.addEventListener("keydown", e => {
-        const keyCode = e.keyCode ? e.keyCode : e.which;
-        console.log(keyCode);
-        if (document.getElementById("contact_modal").getAttribute("aria-hidden") === false && keyCode === 27){
-            closeModal();
-        }
-    });*/
+    document.getElementById("firstname").focus();
 }
 
 function closeModal() {

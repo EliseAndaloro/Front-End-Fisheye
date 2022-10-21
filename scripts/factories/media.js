@@ -12,6 +12,18 @@ function mediaFactory (data) {
     }
 
     function getMediaCardDOM(i) {
+        const link = document.createElement('a');
+        link.setAttribute("href", "#");
+        link.setAttribute("alt", "Ouvrir la lightbox");
+        link.addEventListener('focus', function () {
+            document.addEventListener('keydown', function(e){
+                const keyCode = e.keyCode ? e.keyCode : e.which;
+                if (keyCode === 13){
+                    openLightBox(i);
+                }
+            })
+        });
+
         const article = document.createElement('article');
         const img = displayPhotoOrVideo(media);
         img.setAttribute("src", picture);
@@ -44,11 +56,12 @@ function mediaFactory (data) {
 
         }, { once: true });
 
-        article.appendChild(img);
+        link.appendChild(img);
         likes.appendChild(like);
         imageDescription.appendChild(title);
         imageDescription.appendChild(likes);
-        article.appendChild(imageDescription);
+        link.appendChild(imageDescription);
+        article.appendChild(link);
 
         return (article);
     }
@@ -76,12 +89,10 @@ function mediaFactory (data) {
         if (extension === 'jpg') {
             return document.createElement('img');
         } else {
-            return document.createElement("video");
+            var video = document.createElement("video");
+            video.setAttribute('controls', true);
+            return video;
         }
-    }
-
-    function addLike(){
-
     }
 
     return { getMediaCardDOM, putMediaInLightBox }
