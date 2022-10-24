@@ -1,12 +1,15 @@
+// Affiche la modale qui contient le formulaire de contact
 function displayModal() {
     const modal = document.getElementById("contact_modal");
     const main = document.getElementById("main");
     main.setAttribute("aria-hidden", true);
     modal.setAttribute("aria-hidden", false);
 	modal.style.display = "block";
+    // on met le focus sur l'input prénom
     document.getElementById("firstname").focus();
 }
 
+// Ferme la modale qui contient le formulaire de contact
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     const main = document.getElementById("main");
@@ -15,6 +18,7 @@ function closeModal() {
     modal.style.display = "none";
 }
 
+// Fonction appelée à la soumission du formulaire qui vérifie les datas envoyées, les affiches en console et ferme la modale
 function validate(e) {
     e.preventDefault();
     const firstname = document.getElementById('firstname').value;
@@ -26,6 +30,7 @@ function validate(e) {
     closeModal();
 }
 
+// Si on appuie sur Echap, on ferme la modale de contact
 document.addEventListener("keydown", e => {
         const keyCode = e.keyCode ? e.keyCode : e.which;
         if (keyCode === 27){

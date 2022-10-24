@@ -18,14 +18,11 @@
     </div>
     <div class="filter">
         <label for="filter">Trier par </label>
-        <div class="custom-select" id="select-custom" style="width:200px;">
-            <select name="filter" id="filter" aria-labelledby="Order By">
-              <option value="0">Trier par:</option>
-              <option value="likes">Popularité</option>
-              <option value="date">Date</option>
-              <option value="title">Titre</option>
-            </select>
-          </div>
+        <select name="filter" id="filter" aria-labelledby="Order By">
+            <option value="likes">Popularité</option>
+            <option value="date">Date</option>
+            <option value="title">Titre</option>
+        </select>
     </div>
     <div class="media_section"></div>
     <div id="likes_price">
@@ -54,7 +51,7 @@
                 <input type="email" name="email" id="email"/>
             </div>
             <div>
-                <label>Votre Message</label>
+                <label for="message">Votre Message</label>
                 <textarea id="message"> </textarea>
             </div>
             <button class="contact_button" id="contact_button_submit" aria-label="Send">Envoyer</button>
@@ -63,7 +60,7 @@
 </div>
 
 <div id="lightBox" aria-hidden="true" role="dialog" aria-label="image closeup view">
-    <div class="carrousel_content">
+    <div class="carrousel_content" id="carrousel_content">
         <div class="img icon" id="prev-image">
             <img src="assets/icons/left.svg" alt="Previous image"/>
         </div>
