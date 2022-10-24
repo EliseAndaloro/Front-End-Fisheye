@@ -2,7 +2,8 @@ import PhotographersService from '../services/photographers.service.js';
 import photographerFactory from '../factories/photographer.js';
 import mediaFactory from '../factories/media.js';
 
-const sortBy = document.getElementById("filter");
+//const sortBy = document.getElementById("filter");
+const sortBy = document.getElementById("select-custom");
 
 // Récupération des données du photographe en fonction de son id et affichage du Header sur la page photographe
 function loadPhotographer() {
@@ -61,6 +62,7 @@ function displaySortMedia(medias){
     let i = 0;
     let totalLikes = 0;
 
+    // Création des éléments du DOM pour chaque média
     medias.forEach((media) => {
         const mediaModel = mediaFactory(media);
         const mediaCardDOM = mediaModel.getMediaCardDOM(i);
@@ -76,9 +78,10 @@ function displaySortMedia(medias){
 }
 
 // Tri des médias lorsque le select change
-sortBy.addEventListener("change", function (){
+sortBy.addEventListener("click", function (){
     let params = (new URL(document.location)).searchParams;
     let id = params.get('id');
+    let sortBySelected = document.getElementsByClassName('same-as-selected')[0];
 
     // Suppression du carrousel + création d'un nouveau pour reremplir la lightbox avec les médias triés
     let prevImgArrow = document.getElementById('prev-image');
@@ -90,8 +93,8 @@ sortBy.addEventListener("change", function (){
 
     // Récupération des médias triés
     PhotographersService
-        .fetchPhotographerMediaSortBy(id, sortBy.value)
-        .then(medias => displaySortMedia(medias) );
+        .fetchPhotographerMediaSortBy(id, sortBySelected.textContent)
+        .then(medias => displaySortMedia(medias));
 });
 
 loadPhotographer();

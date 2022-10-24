@@ -27,6 +27,7 @@ function photographerFactory(data) {
         const link = document.createElement('a');
         link.setAttribute("href", "photographer.html?id="+id);
 
+        // Ajout des données du photographe aux éléments créés
         paragraph.textContent= data.city + ', ' + data.country;
         tagline.textContent = data.tagline;
         price.textContent = data.price + '€/jour';
